@@ -31,6 +31,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -85,7 +87,18 @@ REST_FRAMEWORK = {
     ),
 }
 # near STATIC_URL
-STATICFILES_DIRS = [
-    BASE_DIR / "frontend_dist" / "assets",   # adjust path if needed
-]
-TEMPLATES[0]['DIRS'] = [BASE_DIR / "frontend_dist"]  # so index.html is a template
+STATICFILES_DIRS = [BASE_DIR / "dist"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+
+
+# ----- frontend dist + static config (added by helper) -----
+# Make sure TEMPLATE loader can find index.html inside backend/dist
+try:
+    TEMPLATES[0]["DIRS"] = [ BASE_DIR / "dist" ]
+except Exception:
+    pass
+
+STATICFILES_DIRS = getattr(globals(), "STATICFILES_DIRS", []) + [ BASE_DIR / "dist" ]
+STATIC_ROOT = BASE_DIR / "staticfiles"
+# ----- end helper -----
