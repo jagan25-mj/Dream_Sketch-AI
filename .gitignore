@@ -1,16 +1,36 @@
-# Python
+cat > .gitignore <<'EOF'
+# Python / Django
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 *.sqlite3
+*.egg-info/
+dist/
+build/
 
-# Django
-/media/
-/staticfiles/
-/backend/db.sqlite3
+# Virtualenvs
+.venv/
+venv/
+.env
 
-# Node/Vite
+# Django media / static (do not commit uploads/build artifacts)
+backend/media/
+backend/staticfiles/
+media/
+staticfiles/
+
+# Node / Frontend
 node_modules/
-/dist/
-/vite.config.ts.bak
+dist/
+.vite/
+.vscode/
+npm-debug.log*
+yarn-error.log*
+package-lock.json.orig
+vite.config.ts.bak
+
+# Mac / Editor
+.DS_Store
+*.swp
+EOF
