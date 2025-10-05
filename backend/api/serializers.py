@@ -3,7 +3,7 @@ from rest_framework import serializers
 class GenerateImageSerializer(serializers.Serializer):
     prompt = serializers.CharField(allow_blank=False, max_length=2000)
     negative_prompt = serializers.CharField(required=False, allow_blank=True, default="", max_length=2000)
-    model_id = serializers.CharField(required=False, allow_blank=True, default="stable-diffusion-v1-5")
+    model_id = serializers.CharField(required=False, allow_blank=True, default="sdxl-turbo")
     steps = serializers.IntegerField(required=False, default=30, min_value=1, max_value=150)
     guidance_scale = serializers.FloatField(required=False, default=7.5, min_value=1.0, max_value=20.0)
     width = serializers.IntegerField(required=False, default=512, min_value=64, max_value=2048)

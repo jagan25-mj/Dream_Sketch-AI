@@ -95,8 +95,8 @@ const ParameterControls: React.FC<ParameterControlsProps> = ({
               }}
               className={`px-3 py-2 text-sm rounded-lg transition-all duration-200 ${
                 parameters.width === ratio.width && parameters.height === ratio.height
-                  ? 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-600'
-                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-600 hover:border-emerald-300 dark:hover:border-emerald-500'
+                  ? 'bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 border border-primary-300 dark:border-primary-600'
+                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-600 hover:border-primary-300 dark:hover:border-primary-500'
               }`}
             >
               {ratio.name}
@@ -141,7 +141,7 @@ const ParameterControls: React.FC<ParameterControlsProps> = ({
             value={parameters.seed || ''}
             onChange={(e) => updateParameter('seed', e.target.value ? parseInt(e.target.value) : undefined)}
             placeholder="Random"
-            className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+            className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
           />
           <button
             type="button"
@@ -173,7 +173,7 @@ const ParameterControls: React.FC<ParameterControlsProps> = ({
               className="sr-only"
             />
             <div className={`w-11 h-6 rounded-full transition-colors duration-200 ${
-              parameters.upscale ? 'bg-emerald-500' : 'bg-gray-300 dark:bg-gray-600'
+              parameters.upscale ? 'bg-primary-500' : 'bg-gray-300 dark:bg-gray-600'
             }`}>
               <div className={`w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-200 ${
                 parameters.upscale ? 'translate-x-5' : 'translate-x-0'

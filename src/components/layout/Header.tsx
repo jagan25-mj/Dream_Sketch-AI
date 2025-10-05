@@ -18,16 +18,16 @@ const Header: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-emerald-200 dark:border-gray-700 sticky top-0 z-50">
+    <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-primary-200 dark:border-gray-700 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <div className="relative">
-              <Palette className="h-8 w-8 text-emerald-600 dark:text-emerald-400 group-hover:rotate-12 transition-transform duration-300" />
+              <Palette className="h-8 w-8 text-primary-600 dark:text-primary-400 group-hover:rotate-12 transition-transform duration-300" />
               <Sparkles className="h-4 w-4 text-amber-400 absolute -top-1 -right-1 opacity-70 animate-pulse" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 dark:from-primary-400 dark:to-accent-400 bg-clip-text text-transparent">
               DreamSketch AI
             </span>
           </Link>
@@ -40,7 +40,7 @@ const Header: React.FC = () => {
                 to={item.href}
                 className={`px-3 py-2 rounded-lg font-medium transition-all duration-200 ${
                   isActive(item.href)
-                    ? 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300'
+                    ? 'bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300'
                     : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
                 }`}
               >
@@ -79,7 +79,7 @@ const Header: React.FC = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`px-3 py-2 rounded-lg font-medium transition-all duration-200 ${
                     isActive(item.href)
-                      ? 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300'
+                      ? 'bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300'
                       : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                   }`}
                 >

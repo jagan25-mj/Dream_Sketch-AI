@@ -56,12 +56,12 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ selectedModel, onModelCha
             onClick={() => onModelChange(model.id)}
             className={`p-4 rounded-xl border-2 transition-all duration-200 text-left ${
               selectedModel === model.id
-                ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-900/30 dark:border-emerald-400'
-                : 'border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 hover:border-emerald-300 dark:hover:border-emerald-500'
+                ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 dark:border-primary-400'
+                : 'border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 hover:border-primary-300 dark:hover:border-primary-500'
             }`}
           >
             <div className="flex items-center space-x-2 mb-2">
-              <div className={`p-1 rounded ${selectedModel === model.id ? 'text-emerald-600 dark:text-emerald-400' : 'text-gray-400'}`}>
+              <div className={`p-1 rounded ${selectedModel === model.id ? 'text-primary-600 dark:text-primary-400' : 'text-gray-400'}`}>
                 {model.icon}
               </div>
               <span className="font-medium text-sm text-gray-900 dark:text-white">
@@ -72,7 +72,7 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ selectedModel, onModelCha
               {model.description}
             </p>
             <div className="flex justify-between items-center text-xs">
-              <span className="text-emerald-600 dark:text-emerald-400 font-medium">
+              <span className="text-primary-600 dark:text-primary-400 font-medium">
                 {model.bestFor}
               </span>
               <span className="text-gray-500 dark:text-gray-400">

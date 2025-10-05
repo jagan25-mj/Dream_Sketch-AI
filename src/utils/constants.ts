@@ -1,33 +1,60 @@
 export const MODELS = {
-  DREAMSHAPER_V8: 'dreamshaper-v8',
-  ANYTHING_V5: 'anything-v5',
-  SDXL: 'sdxl',
+  SDXL_TURBO: 'sdxl-turbo',
+  SDXL_BASE: 'sdxl-base-1.0',
+  PLAYGROUND: 'playground-v2.5',
+  REALVISXL: 'realvisxl-v4',
+  JUGGERNAUT: 'juggernaut-xl-v9',
+  ANIMAGINE: 'animagine-xl-3.1',
 } as const;
 
 export const MODEL_CONFIGS = {
-  [MODELS.DREAMSHAPER_V8]: {
-    id: MODELS.DREAMSHAPER_V8,
-    name: 'DreamShaper v8',
-    description: 'Best for Ghibli-style landscapes and magical scenes',
-    vramReq: '6GB',
-    bestFor: 'Fantasy art, landscapes',
-    huggingFaceId: 'Lykon/dreamshaper-8',
+  [MODELS.SDXL_TURBO]: {
+    id: MODELS.SDXL_TURBO,
+    name: 'SDXL Turbo',
+    description: 'Ultra-fast SDXL model (1-4 steps)',
+    vramReq: '8GB',
+    bestFor: 'Speed, iteration',
+    huggingFaceId: 'stabilityai/sdxl-turbo',
   },
-  [MODELS.ANYTHING_V5]: {
-    id: MODELS.ANYTHING_V5,
-    name: 'Anything v5',
-    description: 'Excellent for anime portraits and character art',
-    vramReq: '4GB',
-    bestFor: 'Anime, portraits',
-    huggingFaceId: 'Lykon/anything-v5-pruned',
-  },
-  [MODELS.SDXL]: {
-    id: MODELS.SDXL,
-    name: 'Stable Diffusion XL',
-    description: 'High-quality renders with exceptional detail',
+  [MODELS.SDXL_BASE]: {
+    id: MODELS.SDXL_BASE,
+    name: 'SDXL Base 1.0',
+    description: 'Latest SDXL base model for high-quality images',
     vramReq: '12GB',
-    bestFor: 'High resolution, detail',
+    bestFor: 'High quality, versatile',
     huggingFaceId: 'stabilityai/stable-diffusion-xl-base-1.0',
+  },
+  [MODELS.PLAYGROUND]: {
+    id: MODELS.PLAYGROUND,
+    name: 'Playground v2.5',
+    description: 'Superior aesthetic quality',
+    vramReq: '12GB',
+    bestFor: 'Aesthetic, artistic',
+    huggingFaceId: 'playgroundai/playground-v2.5-1024px-aesthetic',
+  },
+  [MODELS.REALVISXL]: {
+    id: MODELS.REALVISXL,
+    name: 'RealVisXL v4',
+    description: 'Photorealistic SDXL model',
+    vramReq: '12GB',
+    bestFor: 'Photorealism, portraits',
+    huggingFaceId: 'SG161222/RealVisXL_V4.0',
+  },
+  [MODELS.JUGGERNAUT]: {
+    id: MODELS.JUGGERNAUT,
+    name: 'Juggernaut XL v9',
+    description: 'Versatile SDXL model for various styles',
+    vramReq: '12GB',
+    bestFor: 'Versatile, all-purpose',
+    huggingFaceId: 'RunDiffusion/Juggernaut-XL-v9',
+  },
+  [MODELS.ANIMAGINE]: {
+    id: MODELS.ANIMAGINE,
+    name: 'Animagine XL 3.1',
+    description: 'Anime-style SDXL model',
+    vramReq: '12GB',
+    bestFor: 'Anime, manga style',
+    huggingFaceId: 'cagliostrolab/animagine-xl-3.1',
   },
 } as const;
 
@@ -42,35 +69,41 @@ export const ASPECT_RATIOS = [
 ] as const;
 
 export const PRESETS = {
+  TURBO: {
+    id: 'turbo',
+    name: 'Turbo',
+    description: 'Ultra-fast with SDXL Turbo (1-4 steps)',
+    parameters: { steps: 4, guidance: 1.5, width: 512, height: 512 },
+  },
   SPEED: {
     id: 'speed',
     name: 'Speed',
     description: 'Fast generation, good quality',
-    parameters: { steps: 12, guidance: 6, width: 512, height: 512 },
+    parameters: { steps: 15, guidance: 5, width: 512, height: 512 },
   },
   BALANCED: {
     id: 'balanced',
     name: 'Balanced',
     description: 'Good balance of speed and quality',
-    parameters: { steps: 20, guidance: 7.5, width: 512, height: 512 },
+    parameters: { steps: 30, guidance: 7.5, width: 1024, height: 1024 },
   },
   QUALITY: {
     id: 'quality',
     name: 'Quality',
     description: 'High quality, slower generation',
-    parameters: { steps: 30, guidance: 8, width: 768, height: 768 },
+    parameters: { steps: 40, guidance: 8, width: 1024, height: 1024 },
   },
   FAITHFUL: {
     id: 'faithful',
     name: 'Faithful',
     description: 'Closely follows prompt',
-    parameters: { steps: 25, guidance: 12, width: 512, height: 512 },
+    parameters: { steps: 35, guidance: 12, width: 1024, height: 1024 },
   },
   STYLIZED: {
     id: 'stylized',
     name: 'Stylized',
     description: 'More creative interpretation',
-    parameters: { steps: 20, guidance: 4, width: 512, height: 512 },
+    parameters: { steps: 30, guidance: 4, width: 1024, height: 1024 },
   },
 } as const;
 
@@ -82,16 +115,16 @@ export const SUGGESTED_PROMPTS = [
   "Flying airship over clouds with a young adventurer looking out the window",
   "Enchanted library with floating books and soft golden light streaming through windows",
   "Mystical garden with giant flowers and tiny fairies dancing in the moonlight",
-  "Steampunk city in the clouds with brass gears and emerald steam, whimsical architecture",
+  "Steampunk city in the clouds with brass gears and primary steam, whimsical architecture",
 ] as const;
 
 export const API_ENDPOINTS = {
-  BASE_URL: '/api/v1',
-  GENERATE_TXT2IMG: '/api/v1/generate/txt2img',
-  GENERATE_IMG2IMG: '/api/v1/generate/img2img',
-  STATUS: '/api/v1/status',
-  MODELS: '/api/v1/models',
-  RESULT: '/api/v1/result',
+  BASE_URL: 'http://localhost:8000/api',
+  GENERATE_TXT2IMG: 'http://localhost:8000/api/txt2img/',
+  GENERATE_IMG2IMG: 'http://localhost:8000/api/img2img/',
+  STATUS: 'http://localhost:8000/api/status/',
+  MODELS: 'http://localhost:8000/api/models/',
+  RESULT: 'http://localhost:8000/api/results/',
 } as const;
 
 export const FILE_CONSTRAINTS = {

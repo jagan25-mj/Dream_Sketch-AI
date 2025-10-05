@@ -15,13 +15,13 @@ const Docs: React.FC = () => {
       </div>
 
       {/* Quick Start */}
-      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
         <div className="flex items-center space-x-2 mb-4">
-          <Book className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+          <Book className="h-6 w-6 text-primary-600 dark:text-primary-400" />
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Quick Start Guide</h2>
         </div>
 
-        <div className="prose prose-emerald dark:prose-invert max-w-none">
+        <div className="prose prose-primary dark:prose-invert max-w-none">
           <h3>Getting Started</h3>
           <ol className="space-y-2">
             <li>Choose your generation mode (Text-to-Image or Image-to-Image)</li>
@@ -44,21 +44,21 @@ const Docs: React.FC = () => {
 
       {/* Models */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+        <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
           <div className="flex items-center space-x-2 mb-4">
-            <Cpu className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+            <Cpu className="h-6 w-6 text-primary-600 dark:text-primary-400" />
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">AI Models</h2>
           </div>
 
           <div className="space-y-4">
-            <div className="p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
-              <h3 className="font-semibold text-emerald-800 dark:text-emerald-300 mb-2">
+            <div className="p-4 bg-primary-50 dark:bg-primary-900/20 rounded-lg">
+              <h3 className="font-semibold text-primary-800 dark:text-primary-300 mb-2">
                 DreamShaper v8
               </h3>
-              <p className="text-sm text-emerald-700 dark:text-emerald-400 mb-2">
+              <p className="text-sm text-primary-700 dark:text-primary-400 mb-2">
                 Perfect for Ghibli-style landscapes and magical scenes
               </p>
-              <ul className="text-xs text-emerald-600 dark:text-emerald-400 space-y-1">
+              <ul className="text-xs text-primary-600 dark:text-primary-400 space-y-1">
                 <li>• Best for: Fantasy art, landscapes, magical scenes</li>
                 <li>• VRAM: 6GB recommended</li>
                 <li>• Specialty: Painterly, dreamy aesthetics</li>
@@ -96,9 +96,9 @@ const Docs: React.FC = () => {
         </div>
 
         {/* Parameters Guide */}
-        <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+        <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
           <div className="flex items-center space-x-2 mb-4">
-            <Code className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+            <Code className="h-6 w-6 text-primary-600 dark:text-primary-400" />
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">Parameters Guide</h2>
           </div>
 
@@ -151,9 +151,9 @@ const Docs: React.FC = () => {
       </div>
 
       {/* Installation Guide */}
-      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
         <div className="flex items-center space-x-2 mb-4">
-          <Server className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+          <Server className="h-6 w-6 text-primary-600 dark:text-primary-400" />
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Installation & Setup</h2>
         </div>
 
@@ -213,15 +213,15 @@ docker-compose up`}
       </div>
 
       {/* API Reference */}
-      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-2">
-            <Code className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+            <Code className="h-6 w-6 text-primary-600 dark:text-primary-400" />
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white">API Reference</h2>
           </div>
           <a
             href="#"
-            className="flex items-center space-x-1 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-200"
+            className="flex items-center space-x-1 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200"
           >
             <span>Full API Docs</span>
             <ExternalLink className="h-4 w-4" />
@@ -236,7 +236,7 @@ docker-compose up`}
             </div>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Generate image from text prompt</p>
             <details className="cursor-pointer">
-              <summary className="text-sm text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
+              <summary className="text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">
                 View example payload
               </summary>
               <div className="mt-2 bg-gray-100 dark:bg-gray-800 rounded p-3 font-mono text-xs overflow-x-auto">
@@ -274,15 +274,15 @@ docker-compose up`}
       </div>
 
       {/* Resources */}
-      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Additional Resources</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <a href="#" className="flex items-center space-x-3 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg hover:bg-emerald-100 dark:hover:bg-emerald-900/30 transition-colors duration-200">
-            <Download className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+          <a href="#" className="flex items-center space-x-3 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 transition-colors duration-200">
+            <Download className="h-6 w-6 text-primary-600 dark:text-primary-400" />
             <div>
-              <h3 className="font-medium text-emerald-800 dark:text-emerald-300">Model Downloads</h3>
-              <p className="text-xs text-emerald-600 dark:text-emerald-400">Pre-trained models & weights</p>
+              <h3 className="font-medium text-primary-800 dark:text-primary-300">Model Downloads</h3>
+              <p className="text-xs text-primary-600 dark:text-primary-400">Pre-trained models & weights</p>
             </div>
           </a>
 

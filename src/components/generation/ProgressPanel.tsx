@@ -7,7 +7,7 @@ const ProgressPanel: React.FC = () => {
 
   if (!activeJob) {
     return (
-      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
         <div className="text-center text-gray-500 dark:text-gray-400">
           <Clock className="h-8 w-8 mx-auto mb-2 opacity-50" />
           <p className="text-sm">No active generation</p>
@@ -19,7 +19,7 @@ const ProgressPanel: React.FC = () => {
   const getStatusIcon = () => {
     switch (activeJob.status) {
       case 'processing':
-        return <Zap className="h-5 w-5 text-emerald-500 animate-pulse" />;
+        return <Zap className="h-5 w-5 text-primary-500 animate-pulse" />;
       case 'failed':
         return <AlertCircle className="h-5 w-5 text-red-500" />;
       default:
@@ -43,7 +43,7 @@ const ProgressPanel: React.FC = () => {
   };
 
   return (
-    <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+    <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
       <div className="flex items-center space-x-2 mb-4">
         {getStatusIcon()}
         <h3 className="font-semibold text-gray-900 dark:text-white">
@@ -69,7 +69,7 @@ const ProgressPanel: React.FC = () => {
             </div>
             <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
               <div
-                className="bg-gradient-to-r from-emerald-500 to-teal-500 h-2 rounded-full transition-all duration-300 ease-out"
+                className="bg-gradient-to-r from-primary-500 to-accent-500 h-2 rounded-full transition-all duration-300 ease-out"
                 style={{ width: `${activeJob.progress}%` }}
               />
             </div>

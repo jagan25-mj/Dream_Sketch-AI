@@ -14,7 +14,7 @@ function App() {
     <ThemeProvider>
       <GenerationProvider>
         <Router>
-          <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-green-100 dark:from-gray-900 dark:via-gray-800 dark:to-emerald-900 transition-colors duration-300">
+          <div className="min-h-screen bg-gradient-to-br from-primary-50 via-accent-50 to-blue-100 dark:from-navy-900 dark:via-navy-800 dark:to-primary-900 transition-colors duration-300">
             <Header />
             <main className="container mx-auto px-4 py-8">
               <Routes>

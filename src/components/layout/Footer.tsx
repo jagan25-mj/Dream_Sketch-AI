@@ -3,7 +3,7 @@ import { Heart, Github, ExternalLink } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-md border-t border-emerald-200 dark:border-gray-700 mt-12">
+    <footer className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-md border-t border-primary-200 dark:border-gray-700 mt-12">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About */}
@@ -24,24 +24,24 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200 flex items-center space-x-2">
+                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 flex items-center space-x-2">
                   <Github className="h-4 w-4" />
                   <span>Source Code</span>
                   <ExternalLink className="h-3 w-3" />
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200">
+                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">
                   Documentation
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200">
+                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">
                   API Reference
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200">
+                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">
                   Model Cards
                 </a>
               </li>
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-emerald-200 dark:border-gray-700 flex flex-col sm:flex-row justify-between items-center">
+        <div className="mt-8 pt-8 border-t border-primary-200 dark:border-gray-700 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center space-x-1">
             <span>Made with</span>
             <Heart className="h-4 w-4 text-red-500 fill-current" />

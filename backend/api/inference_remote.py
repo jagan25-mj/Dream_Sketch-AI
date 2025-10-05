@@ -15,11 +15,12 @@ if not HF_TOKEN:
     HF_TOKEN = None
 
 MODEL_MAP = {
-    "sdxl-base": "stabilityai/stable-diffusion-xl-base-1.0",
-    "stable-diffusion-v1-5": "runwayml/stable-diffusion-v1-5",
-    "stable-diffusion-v2-1": "stabilityai/stable-diffusion-2-1",
-    "openjourney": "prompthero/openjourney-v4",
-    "dreamshaper-v8": "Lykon/DreamShaper",
+    "sdxl-turbo": "stabilityai/sdxl-turbo",
+    "sdxl-base-1.0": "stabilityai/stable-diffusion-xl-base-1.0",
+    "playground-v2.5": "playgroundai/playground-v2.5-1024px-aesthetic",
+    "realvisxl-v4": "SG161222/RealVisXL_V4.0",
+    "juggernaut-xl-v9": "RunDiffusion/Juggernaut-XL-v9",
+    "animagine-xl-3.1": "cagliostrolab/animagine-xl-3.1",
 }
 
 HF_INFERENCE_BASE = "https://api-inference.huggingface.co/models"

@@ -8,13 +8,13 @@ import PresetSelector from './PresetSelector';
 const GenerationForm: React.FC = () => {
   const { addJob, activeJob } = useGeneration();
   const [mode, setMode] = useState<'txt2img' | 'img2img'>('txt2img');
-  const [model, setModel] = useState('dreamshaper-v8');
+  const [model, setModel] = useState('sdxl-turbo');
   const [prompt, setPrompt] = useState('');
   const [negativePrompt, setNegativePrompt] = useState('');
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
   const [parameters, setParameters] = useState({
-    steps: 20,
-    guidance: 7.5,
+    steps: 4,
+    guidance: 1.5,
     width: 512,
     height: 512,
     seed: undefined as number | undefined,
@@ -51,7 +51,7 @@ const GenerationForm: React.FC = () => {
   const isGenerating = activeJob?.status === 'processing';
 
   return (
-    <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6 shadow-lg">
+    <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6 shadow-lg">
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Mode Selector */}
         <div className="flex space-x-4">
@@ -60,7 +60,7 @@ const GenerationForm: React.FC = () => {
             onClick={() => setMode('txt2img')}
             className={`flex-1 flex items-center justify-center space-x-2 py-3 px-4 rounded-xl font-medium transition-all duration-200 ${
               mode === 'txt2img'
-                ? 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-300 dark:border-emerald-600'
+                ? 'bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 border-2 border-primary-300 dark:border-primary-600'
                 : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 border-2 border-transparent hover:bg-gray-200 dark:hover:bg-gray-600'
             }`}
           >
@@ -72,7 +72,7 @@ const GenerationForm: React.FC = () => {
             onClick={() => setMode('img2img')}
             className={`flex-1 flex items-center justify-center space-x-2 py-3 px-4 rounded-xl font-medium transition-all duration-200 ${
               mode === 'img2img'
-                ? 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-300 dark:border-emerald-600'
+                ? 'bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 border-2 border-primary-300 dark:border-primary-600'
                 : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 border-2 border-transparent hover:bg-gray-200 dark:hover:bg-gray-600'
             }`}
           >
@@ -100,9 +100,9 @@ const GenerationForm: React.FC = () => {
               />
               <label
                 htmlFor="image-upload"
-                className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-emerald-300 dark:border-emerald-600 rounded-xl cursor-pointer bg-emerald-50 dark:bg-emerald-900/20 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 transition-colors duration-200"
+                className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-primary-300 dark:border-primary-600 rounded-xl cursor-pointer bg-primary-50 dark:bg-primary-900/20 hover:bg-primary-100 dark:hover:bg-primary-900/30 transition-colors duration-200"
               >
-                <Upload className="h-8 w-8 text-emerald-600 dark:text-emerald-400 mb-2" />
+                <Upload className="h-8 w-8 text-primary-600 dark:text-primary-400 mb-2" />
                 <span className="text-sm text-gray-600 dark:text-gray-300">
                   {uploadedImage ? uploadedImage.name : 'Click to upload or drag & drop'}
                 </span>
@@ -121,7 +121,7 @@ const GenerationForm: React.FC = () => {
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             placeholder="A magical forest clearing with floating lanterns, Studio Ghibli style..."
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none"
+            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
             rows={3}
             required
           />
@@ -137,7 +137,7 @@ const GenerationForm: React.FC = () => {
             value={negativePrompt}
             onChange={(e) => setNegativePrompt(e.target.value)}
             placeholder="blurry, low quality, distorted..."
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none"
+            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
             rows={2}
           />
         </div>
@@ -149,7 +149,7 @@ const GenerationForm: React.FC = () => {
         <button
           type="button"
           onClick={() => setShowAdvanced(!showAdvanced)}
-          className="flex items-center space-x-2 text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-200"
+          className="flex items-center space-x-2 text-sm font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200"
         >
           <Settings className="h-4 w-4" />
           <span>{showAdvanced ? 'Hide' : 'Show'} Advanced Settings</span>
@@ -168,7 +168,7 @@ const GenerationForm: React.FC = () => {
         <button
           type="submit"
           disabled={isGenerating || !prompt.trim()}
-          className="w-full flex items-center justify-center space-x-2 py-4 px-6 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
+          className="w-full flex items-center justify-center space-x-2 py-4 px-6 bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
         >
           <Sparkles className={`h-5 w-5 ${isGenerating ? 'animate-spin' : ''}`} />
           <span>{isGenerating ? 'Generating...' : 'Generate Image'}</span>

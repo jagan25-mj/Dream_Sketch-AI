@@ -9,7 +9,7 @@ const ResultsGallery: React.FC = () => {
 
   if (completedJobs.length === 0) {
     return (
-      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
         <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Recent Results</h3>
         <div className="text-center text-gray-500 dark:text-gray-400">
           <Clock className="h-8 w-8 mx-auto mb-2 opacity-50" />
@@ -35,7 +35,7 @@ const ResultsGallery: React.FC = () => {
   };
 
   return (
-    <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+    <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
       <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Recent Results</h3>
       
       <div className="space-y-4">
@@ -82,7 +82,7 @@ const ResultsGallery: React.FC = () => {
 
       {completedJobs.length > 5 && (
         <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-          <button className="w-full text-sm text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-200">
+          <button className="w-full text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200">
             View All Results ({completedJobs.length})
           </button>
         </div>

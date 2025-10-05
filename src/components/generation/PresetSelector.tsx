@@ -68,9 +68,9 @@ const PresetSelector: React.FC<PresetSelectorProps> = ({ onPresetSelect }) => {
             key={preset.id}
             type="button"
             onClick={() => onPresetSelect(preset.parameters)}
-            className="flex flex-col items-center p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg hover:border-emerald-300 dark:hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all duration-200 group"
+            className="flex flex-col items-center p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg hover:border-primary-300 dark:hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-200 group"
           >
-            <div className="text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform duration-200 mb-1">
+            <div className="text-primary-600 dark:text-primary-400 group-hover:scale-110 transition-transform duration-200 mb-1">
               {preset.icon}
             </div>
             <span className="text-xs font-medium text-gray-900 dark:text-white">

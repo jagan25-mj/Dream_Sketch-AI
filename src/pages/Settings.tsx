@@ -33,9 +33,9 @@ const Settings: React.FC = () => {
       </div>
 
       {/* Appearance Settings */}
-      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
         <div className="flex items-center space-x-2 mb-4">
-          <Palette className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+          <Palette className="h-5 w-5 text-primary-600 dark:text-primary-400" />
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
             Appearance
           </h3>
@@ -53,7 +53,7 @@ const Settings: React.FC = () => {
             </div>
             <button
               onClick={toggleTheme}
-              className="px-4 py-2 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 rounded-lg font-medium hover:bg-emerald-200 dark:hover:bg-emerald-900/70 transition-colors duration-200"
+              className="px-4 py-2 bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 rounded-lg font-medium hover:bg-primary-200 dark:hover:bg-primary-900/70 transition-colors duration-200"
             >
               {theme === 'light' ? 'Switch to Dark' : 'Switch to Light'}
             </button>
@@ -62,9 +62,9 @@ const Settings: React.FC = () => {
       </div>
 
       {/* Generation Defaults */}
-      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
         <div className="flex items-center space-x-2 mb-4">
-          <SettingsIcon className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+          <SettingsIcon className="h-5 w-5 text-primary-600 dark:text-primary-400" />
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
             Generation Defaults
           </h3>
@@ -78,7 +78,7 @@ const Settings: React.FC = () => {
             <select
               value={settings.defaultModel}
               onChange={(e) => handleSettingChange('defaultModel', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             >
               <option value="dreamshaper-v8">DreamShaper v8</option>
               <option value="anything-v5">Anything v5</option>
@@ -132,7 +132,7 @@ const Settings: React.FC = () => {
                 className="sr-only"
               />
               <div className={`w-11 h-6 rounded-full transition-colors duration-200 ${
-                settings.autoUpscale ? 'bg-emerald-500' : 'bg-gray-300 dark:bg-gray-600'
+                settings.autoUpscale ? 'bg-primary-500' : 'bg-gray-300 dark:bg-gray-600'
               }`}>
                 <div className={`w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-200 ${
                   settings.autoUpscale ? 'translate-x-5' : 'translate-x-0'
@@ -144,9 +144,9 @@ const Settings: React.FC = () => {
       </div>
 
       {/* Performance Settings */}
-      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
         <div className="flex items-center space-x-2 mb-4">
-          <Gpu className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+          <Gpu className="h-5 w-5 text-primary-600 dark:text-primary-400" />
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
             Performance
           </h3>
@@ -170,7 +170,7 @@ const Settings: React.FC = () => {
                 className="sr-only"
               />
               <div className={`w-11 h-6 rounded-full transition-colors duration-200 ${
-                settings.enableGPU ? 'bg-emerald-500' : 'bg-gray-300 dark:bg-gray-600'
+                settings.enableGPU ? 'bg-primary-500' : 'bg-gray-300 dark:bg-gray-600'
               }`}>
                 <div className={`w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-200 ${
                   settings.enableGPU ? 'translate-x-5' : 'translate-x-0'
@@ -199,9 +199,9 @@ const Settings: React.FC = () => {
       </div>
 
       {/* Output Settings */}
-      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
         <div className="flex items-center space-x-2 mb-4">
-          <HardDrive className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+          <HardDrive className="h-5 w-5 text-primary-600 dark:text-primary-400" />
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
             Output Settings
           </h3>
@@ -215,7 +215,7 @@ const Settings: React.FC = () => {
             <select
               value={settings.imageFormat}
               onChange={(e) => handleSettingChange('imageFormat', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             >
               <option value="jpg">JPEG</option>
               <option value="png">PNG</option>
@@ -254,7 +254,7 @@ const Settings: React.FC = () => {
                 className="sr-only"
               />
               <div className={`w-11 h-6 rounded-full transition-colors duration-200 ${
-                settings.saveMetadata ? 'bg-emerald-500' : 'bg-gray-300 dark:bg-gray-600'
+                settings.saveMetadata ? 'bg-primary-500' : 'bg-gray-300 dark:bg-gray-600'
               }`}>
                 <div className={`w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-200 ${
                   settings.saveMetadata ? 'translate-x-5' : 'translate-x-0'
@@ -266,16 +266,16 @@ const Settings: React.FC = () => {
       </div>
 
       {/* Actions */}
-      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-emerald-200 dark:border-gray-700 p-6">
+      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-primary-200 dark:border-gray-700 p-6">
         <div className="flex items-center space-x-2 mb-4">
-          <Shield className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+          <Shield className="h-5 w-5 text-primary-600 dark:text-primary-400" />
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
             Actions
           </h3>
         </div>
 
         <div className="space-y-3">
-          <button className="w-full flex items-center justify-center space-x-2 py-3 px-4 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 rounded-lg hover:bg-emerald-200 dark:hover:bg-emerald-900/70 transition-colors duration-200">
+          <button className="w-full flex items-center justify-center space-x-2 py-3 px-4 bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 rounded-lg hover:bg-primary-200 dark:hover:bg-primary-900/70 transition-colors duration-200">
             <Download className="h-5 w-5" />
             <span>Export Settings</span>
           </button>

@@ -16,30 +16,47 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 DTYPE = torch.float16 if torch.cuda.is_available() else torch.float32
 
 MODEL_CONFIGS = {
-    "stable-diffusion-v1-5": {
-        "repo_id": "runwayml/stable-diffusion-v1-5",
-        "pipeline_class": StableDiffusionPipeline,
+    "sdxl-turbo": {
+        "repo_id": "stabilityai/sdxl-turbo",
+        "pipeline_class": StableDiffusionXLPipeline,
         "default_size": 512,
+        "description": "Ultra-fast SDXL model (1-4 steps)",
+        "recommended_steps": 4,
     },
-    "stable-diffusion-v2-1": {
-        "repo_id": "stabilityai/stable-diffusion-2-1",
-        "pipeline_class": StableDiffusionPipeline,
-        "default_size": 768,
-    },
-    "dreamshaper-v8": {
-        "repo_id": "Lykon/DreamShaper",
-        "pipeline_class": StableDiffusionPipeline,
-        "default_size": 512,
-    },
-    "sdxl-base": {
+    "sdxl-base-1.0": {
         "repo_id": "stabilityai/stable-diffusion-xl-base-1.0",
         "pipeline_class": StableDiffusionXLPipeline,
         "default_size": 1024,
+        "description": "Latest SDXL base model for high-quality images",
+        "recommended_steps": 30,
     },
-    "openjourney": {
-        "repo_id": "prompthero/openjourney-v4",
-        "pipeline_class": StableDiffusionPipeline,
-        "default_size": 512,
+    "playground-v2.5": {
+        "repo_id": "playgroundai/playground-v2.5-1024px-aesthetic",
+        "pipeline_class": StableDiffusionXLPipeline,
+        "default_size": 1024,
+        "description": "Playground v2.5 - Superior aesthetic quality",
+        "recommended_steps": 30,
+    },
+    "realvisxl-v4": {
+        "repo_id": "SG161222/RealVisXL_V4.0",
+        "pipeline_class": StableDiffusionXLPipeline,
+        "default_size": 1024,
+        "description": "Photorealistic SDXL model",
+        "recommended_steps": 30,
+    },
+    "juggernaut-xl-v9": {
+        "repo_id": "RunDiffusion/Juggernaut-XL-v9",
+        "pipeline_class": StableDiffusionXLPipeline,
+        "default_size": 1024,
+        "description": "Versatile SDXL model for various styles",
+        "recommended_steps": 30,
+    },
+    "animagine-xl-3.1": {
+        "repo_id": "cagliostrolab/animagine-xl-3.1",
+        "pipeline_class": StableDiffusionXLPipeline,
+        "default_size": 1024,
+        "description": "Anime-style SDXL model",
+        "recommended_steps": 28,
     },
 }
 
@@ -115,6 +132,8 @@ class ModelManager:
                 "id": model_id,
                 "name": model_id.replace("-", " ").title(),
                 "default_size": config["default_size"],
+                "description": config.get("description", ""),
+                "recommended_steps": config.get("recommended_steps", 30),
             }
             for model_id, config in MODEL_CONFIGS.items()
         ]
