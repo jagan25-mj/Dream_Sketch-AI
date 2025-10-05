@@ -1,11 +1,28 @@
 version: '3.8'
+
 services:
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
+      - model_cache:/root/.cache/huggingface
+      - media_files:/app/media
     ports:
       - '8000:8000'
     env_file:
       - .env
+    environment:
+      - USE_LOCAL_MODELS=true
+      - DEBUG=True
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+volumes:
+  model_cache:
+  media_files:
