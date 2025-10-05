@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Filter, Download, Share2, Heart, Eye, Grid3X3, Grid2X2 } from 'lucide-react';
+import { Search, Filter, Download, Share2, Heart, Eye, Grid3x3 as Grid3X3, Grid2x2 as Grid2X2 } from 'lucide-react';
 import { useGeneration } from '../contexts/GenerationContext';
 
 const Gallery: React.FC = () => {
